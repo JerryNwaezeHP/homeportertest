@@ -15,5 +15,6 @@ module.exports = {
     'node/no-missing-require': 'error',
     'node/no-unpublished-require': 'off',
     'node/no-unsupported-features/node-builtins': 'error',
+    'no-unused-vars': 'off'
   },
 }
