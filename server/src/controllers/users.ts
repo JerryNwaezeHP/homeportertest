@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
+import { ValidateBody } from '../utils/middleware/validate'
 import UsersServices from '../services/users'
 import * as Dto from '../dto/users.dto'
-import { ValidateBody } from '../utils/middleware/validate'
 
 export default class UsersController {
     static async getUserDetails (req: Request, res: Response, next: Function) {

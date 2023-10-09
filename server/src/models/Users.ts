@@ -24,4 +24,16 @@ export class Users extends Model<Users> {
     type: DataType.STRING(255),
   })
   token!: string
+
+  @Column({
+    field: 'created_at',
+    type: DataType.DATE,
+  })
+  created_at!: string
+
+  @Column({
+    field: 'updated_at',
+    type: DataType.DATE,
+  })
+  updated_at!: string
 }

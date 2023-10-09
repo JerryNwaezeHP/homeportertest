@@ -2,7 +2,7 @@
 const { DataType } = require("sequelize-typescript");
 
 module.exports = {
-  up: (queryInterface, _Sequelize) => {
+  up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('users', {
       user_id: {
         allowNull: false,
@@ -15,6 +15,16 @@ module.exports = {
       },
       token: {
         type: DataType.STRING
+      },
+      created_at: {
+        type: DataType.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
+      },
+      updated_at: {
+        type: DataType.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP')      
       }
     });
   },
