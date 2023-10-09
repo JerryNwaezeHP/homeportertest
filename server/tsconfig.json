@@ -1,0 +1,19 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noUnusedLocals": false,
+    "sourceMap": true,
+    "declaration": false,
+    "pretty": true,
+    "skipLibCheck": true,
+    "strictPropertyInitialization": false,
+    "strictNullChecks": false
+  },
+  "include": ["**/*.ts", "index.ts", "src/migrations/20231008130111-create-user-table.js"],
+  "exclude": ["node_modules"]
+}

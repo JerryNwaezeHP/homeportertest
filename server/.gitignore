@@ -1,0 +1,17 @@
+public/uploads/*
+utils/uploads/*
+node_modules
+yarn.lock
+package-lock.json
+.idea/*
+.vscode/*
+*.js.map
+
+.env
+.env.staging
+.env.test
+.env.local
+.env.production
+
+*.lock
+.DS_Store
