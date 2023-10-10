@@ -72,6 +72,7 @@ class App {
   }
 
   private async Database() {
+    if (process.env.NODE_ENV === "production") return Logger.info(`Successfully avoided database initialization`);
     this.db = new DbContext();
     await this.db.connect();
   }
