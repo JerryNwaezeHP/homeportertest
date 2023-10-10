@@ -39,7 +39,7 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            sudo mkdir -p /var/www/homeportertest.com/app/
+            mkdir -p /var/www/homeportertest.com/app/
             cd /var/www/homeportertest.com/app/
             rm -rf *
             
