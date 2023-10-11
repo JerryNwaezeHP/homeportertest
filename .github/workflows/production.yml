@@ -41,6 +41,7 @@ jobs:
           script: |
             mkdir -p /var/www/homeportertest.com/app/
             cd /var/www/homeportertest.com/app/
+            pm2 stop index
             rm -rf *
             
       - name: Upload build to EC2
@@ -65,7 +66,7 @@ jobs:
             npm run build
             cd /var/www/homeportertest.com/app/server
             npm install
-            NODE_ENV=production pm2 start index.ts --watch
+            NODE_ENV=production pm2 start npm -- run dev
 
       - name: revoke runner ip address
         run: |

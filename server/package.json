@@ -8,7 +8,8 @@
     "dev": "nodemon index.ts",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "migrate": "dotenv -e .env npx sequelize-cli db:migrate"
+    "migrate": "dotenv -e .env npx sequelize-cli db:migrate",
+    "migrate:undo": "dotenv -e .env npx sequelize-cli db:migrate:undo"
   },
   "keywords": [],
   "author": "",
