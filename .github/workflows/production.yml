@@ -41,7 +41,7 @@ jobs:
           script: |
             mkdir -p /var/www/homeportertest.com/app/
             cd /var/www/homeportertest.com/app/
-            pm2 stop index
+            pm2 stop npm
             rm -rf *
             
       - name: Upload build to EC2
