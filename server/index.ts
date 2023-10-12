@@ -5,6 +5,7 @@ import * as http from 'http';
 import * as path from 'path';
 import * as referrerPolicy from 'referrer-policy';
 import * as cookieParser from 'cookie-parser';
+import swaggerDocs from './swagger';
 
 import createMainRouter from './src/routes';
 import { AccessControl, ErrorHandler } from './src/utils/middleware';
@@ -17,7 +18,7 @@ dotenv.config();
 const PORT = process.env.PORT || 8080;
 
 class App {
-  public app: express.Application;
+  public app: express.Express;
   public router: Record<any, any>;
   public db: Record<any, any>;
   public server: http.Server;
@@ -34,6 +35,7 @@ class App {
     this.app.set('view engine', 'ejs');
 
     this.config();
+    if (process.env.NODE_ENV === "development") swaggerDocs(this.app, Number(PORT));
     this.app.use('/api/v1/', createMainRouter());
     this.app.use('/sessions', new SessionsRoute().route());
     this.server = http.createServer(this.app);
