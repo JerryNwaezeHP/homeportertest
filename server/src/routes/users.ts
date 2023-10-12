@@ -27,7 +27,7 @@ class UsersRoute {
       await UsersController.getUserDetails(req, res, next);
     });
     /**
-     * @swagger
+     * @openapi
      * /users:
      *   post:
      *     summary: Create a new user
